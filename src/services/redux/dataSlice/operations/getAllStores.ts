@@ -5,6 +5,10 @@ import { asyncThunkDecoratorData } from 'services/helpers';
 export const getAllStores = createAsyncThunk(
   'data/getAllStores',
   asyncThunkDecoratorData(async () => {
-    return await getAllStoreAPI();
+    const {
+      data: { stores },
+    } = await getAllStoreAPI();
+
+    return stores;
   })
 );

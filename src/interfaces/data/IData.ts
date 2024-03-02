@@ -5,22 +5,19 @@ export interface IDrug {
   imgCloud: string;
 }
 
+export interface IDrugByStore {
+  drugs: IDrug[];
+  id: string;
+}
+
 export interface IStore {
   _id: string;
   title: string;
   address: string;
-  drugs: IDrug[];
+  drugs: IDrug[] | [];
 }
 
-export interface ICartItem {
-  item: IDrug;
-  quantity: number;
-}
-
-export interface IOrderItem {
-  _id: string;
-  title: string;
-  priceItem: number;
+export interface ICartItem extends IDrug {
   quantity: number;
 }
 
@@ -32,11 +29,13 @@ export interface IOrder {
   phone: string;
   address: string;
   totalPrice: number;
-  products: IOrderItem[];
+  products: ICartItem[];
 }
 
 export interface ISliceData {
   stores: IStore[];
+  activeStore: string | null;
+
   favoriteDrugs: string[];
   cart: ICartItem[];
   history: IOrder[];

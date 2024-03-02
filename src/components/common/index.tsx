@@ -4,3 +4,6 @@ export * from './ButtonForm/ButtonForm.styled';
 export * from './InputForm/InputForm.styled';
 export * from './Error/ErrorInputForm.styled';
 export * from './Logo/Logo';
+export * from './Button/Button.styled';
+export * from './IconBtn/IconBtn.styled';
+export * from './Form/Form.styled';

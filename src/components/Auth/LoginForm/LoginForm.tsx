@@ -1,11 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTypeDispatch } from 'services/redux/customHook/typeHooks';
-import { AuthForm } from '../../../pages/AuthPage/AuthForm.styled';
 import { schemaLoginForm } from 'const';
 import { IUserLogin } from 'interfaces';
 
-import { ButtonForm, ErrorInputForm, InputForm } from 'components/common';
+import {
+  ButtonForm,
+  ErrorInputForm,
+  FormContainer,
+  InputForm,
+} from 'components/common';
 import { logInUser } from 'services/redux/authSlice/operations';
 
 export const LoginForm = () => {
@@ -24,7 +28,7 @@ export const LoginForm = () => {
   };
 
   return (
-    <AuthForm onSubmit={handleSubmit(onSubmit)}>
+    <FormContainer onSubmit={handleSubmit(onSubmit)}>
       <div>
         <InputForm placeholder="Email" {...register('email')} />
         <ErrorInputForm>{errors.email?.message}</ErrorInputForm>
@@ -40,6 +44,6 @@ export const LoginForm = () => {
       </div>
 
       <ButtonForm type="submit">Login</ButtonForm>
-    </AuthForm>
+    </FormContainer>
   );
 };
