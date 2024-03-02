@@ -15,6 +15,7 @@ export const Header = () => {
       <nav>
         <LinkStyled to={routePage.BASE}>Shop</LinkStyled>
         <LinkStyled to={routePage.CART}>Shopping Cart</LinkStyled>
+        <LinkStyled to={routePage.HISTORY}>History</LinkStyled>
       </nav>
       <Button onClick={handleClick}>Logout</Button>
     </HeaderContainer>

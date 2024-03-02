@@ -15,6 +15,11 @@ export const HeaderContainer = styled.header`
   background-color: white;
   border-bottom: solid 2px ${({ theme }) => theme.colorElement};
 
+  nav {
+    display: flex;
+    gap: 8px;
+  }
+
   button {
     width: fit-content;
     height: 32px;

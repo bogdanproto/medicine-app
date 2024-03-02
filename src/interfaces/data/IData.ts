@@ -35,6 +35,11 @@ export interface IOrder {
   products: ICartItem[];
 }
 
+export interface IOrderHistory extends IOrder {
+  _id: string;
+  createdAt: string;
+}
+
 export interface ISliceData {
   stores: IStore[];
   activeStore: string | null;

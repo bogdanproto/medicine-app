@@ -63,7 +63,9 @@ export const OrderForm = () => {
       </div>
       <TotalBox>
         <TotalText>{`Total price: ${totalPrice}$`}</TotalText>
-        <ButtonForm type="submit">Submit</ButtonForm>
+        <ButtonForm disabled={!totalPrice} type="submit">
+          Submit
+        </ButtonForm>
       </TotalBox>
     </OrderFormContainer>
   );

@@ -17,4 +17,10 @@ export const LinkStyled = styled(NavLink)`
     color: ${({ theme }) => theme.colorButtonText};
     background-color: ${({ theme }) => theme.colorButton};
   }
+
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colorButton};
+    color: ${({ theme }) => theme.colorButtonText};
+  }
 `;
