@@ -6,8 +6,10 @@ import { asyncThunkDecoratorData } from 'services/helpers';
 export const createOrder = createAsyncThunk(
   'data/createOrder',
   asyncThunkDecoratorData(async (obj: IOrder) => {
-    const { data } = await createOrderAPI(obj);
+    const {
+      data: { order },
+    } = await createOrderAPI(obj);
 
-    return data;
+    return order;
   })
 );

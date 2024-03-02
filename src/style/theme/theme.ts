@@ -9,7 +9,7 @@ export const theme: Record<string, string> = {
   colorElementText: 'rgba(54, 53, 53, 1)',
   colorBlueText: ' rgba(52, 112, 255, 1)',
   colorTitleText: 'rgba(18, 20, 23, 1)',
-  colorSubText: 'rgba(18, 20, 23, 0.5)',
+  colorSubText: 'rgba(18, 20, 23, 0.1)',
   colorIcon: 'rgba(255, 255, 255, 0.8)',
 
   /* color form */

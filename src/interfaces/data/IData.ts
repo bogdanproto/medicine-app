@@ -21,9 +21,12 @@ export interface ICartItem extends IDrug {
   quantity: number;
 }
 
-export interface IOrder {
+export interface ICartItemQnt {
   _id: string;
-  store: IStore;
+  quantity: number;
+}
+
+export interface IOrder {
   name: string;
   email: string;
   phone: string;
@@ -40,6 +43,7 @@ export interface ISliceData {
   cart: ICartItem[];
   history: IOrder[];
 
+  successMsg: string | null;
   errorData: string | null;
   isLoading: boolean;
 }

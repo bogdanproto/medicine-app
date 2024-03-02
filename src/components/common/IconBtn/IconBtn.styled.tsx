@@ -12,5 +12,11 @@ export const IconBtn = styled.button`
 
   svg {
     color: ${({ theme }) => theme.colorIcon};
+    transition: fill ${({ theme }) => theme.cubicTransition};
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: ${({ theme }) => theme.colorActive};
   }
 `;

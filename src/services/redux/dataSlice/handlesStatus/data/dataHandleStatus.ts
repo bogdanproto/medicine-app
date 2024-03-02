@@ -1,4 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { successDataMsg } from 'const';
 import { ISliceData } from 'interfaces';
 import { IDrugByStore, IOrder, IStore } from 'interfaces/data/IData';
 
@@ -43,7 +44,9 @@ export const handleFulfilledCreateOrder = (
   action: PayloadAction<IOrder>
 ) => {
   state.history = [...state.history, action.payload];
+  state.cart = [];
 
+  state.successMsg = successDataMsg.ORDER_CREATED;
   state.isLoading = false;
   state.errorData = null;
 };

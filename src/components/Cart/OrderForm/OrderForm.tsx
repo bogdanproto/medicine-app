@@ -1,28 +1,47 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import {
-  ButtonForm,
-  ErrorInputForm,
-  FormContainer,
-  InputForm,
-} from 'components/common';
+import { ButtonForm, ErrorInputForm, InputForm } from 'components/common';
 import { schemaOrderForm } from 'const';
 import { useForm } from 'react-hook-form';
+import { OrderFormContainer, TotalBox } from './OrderForm.styled';
+import {
+  useTypeDispatch,
+  useTypeSelector,
+} from 'services/redux/customHook/typeHooks';
+import {
+  selectCart,
+  selectTotalCart,
+} from 'services/redux/dataSlice/selectors';
+import { TotalText } from '../CartList/CartList.styled';
+import { createOrder } from 'services/redux/dataSlice/operations';
+import { useEffect } from 'react';
 
 export const OrderForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { isSubmitSuccessful, errors },
   } = useForm({
     resolver: yupResolver(schemaOrderForm),
   });
 
+  const dispatch = useTypeDispatch();
+
+  const cart = useTypeSelector(selectCart);
+  const totalPrice = useTypeSelector(selectTotalCart);
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
+
   const onSubmit = (data: any) => {
-    console.log(data);
+    dispatch(createOrder({ ...data, products: cart, totalPrice }));
   };
 
   return (
-    <FormContainer onSubmit={handleSubmit(onSubmit)}>
+    <OrderFormContainer onSubmit={handleSubmit(onSubmit)}>
       <div>
         <InputForm placeholder="Name" {...register('name')} />
         <ErrorInputForm>{errors.name?.message}</ErrorInputForm>
@@ -42,8 +61,10 @@ export const OrderForm = () => {
         <InputForm placeholder="Address" {...register('address')} />
         <ErrorInputForm>{errors.address?.message}</ErrorInputForm>
       </div>
-
-      <ButtonForm type="submit">Submit</ButtonForm>
-    </FormContainer>
+      <TotalBox>
+        <TotalText>{`Total price: ${totalPrice}$`}</TotalText>
+        <ButtonForm type="submit">Submit</ButtonForm>
+      </TotalBox>
+    </OrderFormContainer>
   );
 };

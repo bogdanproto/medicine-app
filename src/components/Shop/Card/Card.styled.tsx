@@ -11,7 +11,7 @@ export const CardContainer = styled.li`
 
   border-radius: 8px;
 
-  width: 160px;
+  width: 166px;
   height: 200px;
 
   img {

@@ -1,7 +1,12 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { ISliceData } from 'interfaces';
 
-import { toAddToCart, toToggelFavorite } from '../reducers';
+import {
+  toAddToCart,
+  toChangeQntCart,
+  toDeleteFromCart,
+  toToggelFavorite,
+} from '../reducers';
 import {
   createOrder,
   getAllDrugByStore,
@@ -25,6 +30,7 @@ const initialState: ISliceData = {
   cart: [],
   history: [],
 
+  successMsg: null,
   errorData: null,
   isLoading: false,
 };
@@ -35,6 +41,8 @@ const dataSlice = createSlice({
   reducers: {
     toggelFavorite: toToggelFavorite,
     addToCart: toAddToCart,
+    deleteFromCart: toDeleteFromCart,
+    changeQntCart: toChangeQntCart,
   },
   extraReducers: builder => {
     builder
@@ -64,4 +72,5 @@ const dataSlice = createSlice({
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { toggelFavorite, addToCart } = dataSlice.actions;
+export const { toggelFavorite, addToCart, deleteFromCart, changeQntCart } =
+  dataSlice.actions;
