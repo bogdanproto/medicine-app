@@ -11,6 +11,8 @@ selection. Additionally, a history page enables easy access to past orders.
 
 ## Usage
 
+**Important: The ENV files(FrontEnd, BackEnd) have been sent additionally to Telegram. Please ensure you have the .env files before starting the project locally. If you haven’t received them, you can contact me by telegram https://t.me/PROBOGDAN or email b.protasenko@gmail.com**
+
 Live link FrontEnd: https://polite-macaron-9d0c9e.netlify.app
 
 Live Server BackEnd: https://medicine-backend.onrender.com
@@ -18,8 +20,6 @@ Live Server BackEnd: https://medicine-backend.onrender.com
 FrontEnd Repo: https://github.com/bogdanproto/medicine-app
 
 BackEnd Repo: https://github.com/bogdanproto/medicine-backend
-
-**Important: The ENV files(FrontEnd, BackEnd) have been sent additionally to Telegram. Please ensure you have the .env files before starting the project locally. If you haven’t received them, you can contact me by telegram https://t.me/PROBOGDAN or email b.protasenko@gmail.com**
 
 ### Installing
 
