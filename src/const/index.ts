@@ -8,3 +8,4 @@ export * from './schema/orderForm';
 export * from './notification/successNotification';
 export * from './schema/sortForm';
 export * from './select/sortOptions';
+export * from './map/coordinattes';

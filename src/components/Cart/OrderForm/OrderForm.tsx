@@ -1,5 +1,10 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ButtonForm, ErrorInputForm, InputForm } from 'components/common';
+import {
+  AddressInput,
+  ButtonForm,
+  ErrorInputForm,
+  InputForm,
+} from 'components/common';
 import { schemaOrderForm } from 'const';
 import { useForm } from 'react-hook-form';
 import { OrderFormContainer, TotalBox } from './OrderForm.styled';
@@ -14,8 +19,19 @@ import {
 import { TotalText } from '../CartList/CartList.styled';
 import { createOrder } from 'services/redux/dataSlice/operations';
 import { useEffect } from 'react';
+import { ICoordinates } from 'interfaces';
 
-export const OrderForm = () => {
+interface OrderFormProps {
+  isLoaded: boolean;
+  mapAddress: string;
+  getCoordinates: (coordinates: ICoordinates) => void;
+}
+
+export const OrderForm: React.FC<OrderFormProps> = ({
+  isLoaded,
+  getCoordinates,
+  mapAddress,
+}) => {
   const {
     register,
     handleSubmit,
@@ -60,7 +76,13 @@ export const OrderForm = () => {
           </div>
 
           <div>
-            <InputForm placeholder="Address" {...register('address')} />
+            <AddressInput
+              register={register('address')}
+              isLoaded={isLoaded}
+              placeholder="Address"
+              getCoordinates={getCoordinates}
+              mapAddress={mapAddress}
+            />
             <ErrorInputForm>{errors.address?.message}</ErrorInputForm>
           </div>
           <TotalBox>

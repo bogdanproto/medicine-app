@@ -11,3 +11,5 @@ export type { IUserForm } from './form/authForm';
 export type { IUserLogin } from './form/authForm';
 export type { IUserSignUp } from './form/authForm';
 export type { FormType } from './form/authForm';
+
+export type { ICoordinates } from './map/mapTypes';

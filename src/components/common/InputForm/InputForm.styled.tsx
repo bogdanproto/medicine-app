@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const InputForm = styled.input`
+  position: relative;
+
   width: 100%;
   height: 36px;
   box-sizing: border-box;

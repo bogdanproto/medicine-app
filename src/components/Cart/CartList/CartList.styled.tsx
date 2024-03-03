@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CartListContainer = styled.div`
   width: 440px;
-  height: 380px;
+  height: 610px;
 
   border: 1px solid ${({ theme }) => theme.colorSubText};
   border-radius: 8px 0 0 8px;
@@ -19,7 +19,7 @@ export const CartListContainer = styled.div`
 `;
 
 export const CartListBox = styled.div`
-  height: 360px;
+  height: 586px;
   overflow: auto;
 `;
 
