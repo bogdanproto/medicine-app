@@ -19,18 +19,18 @@ const Cart = () => {
   });
 
   return (
-    <>
+    <CartConteiner>
       {cart.length > 0 ? (
-        <CartConteiner>
+        <>
           <CartList cart={cart} />
           <OrderPlace isLoaded={isLoaded} />
-        </CartConteiner>
+        </>
       ) : (
         <Empty>
           <p>Shopping cart is empty</p>
         </Empty>
       )}
-    </>
+    </CartConteiner>
   );
 };
 

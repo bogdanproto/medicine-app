@@ -5,5 +5,9 @@ export const HistoryContainer = styled.section`
   flex-direction: column;
   gap: 16px;
 
+  height: calc(100vh - 56px);
+
   padding: 16px 16px 32px 16px;
+
+  overflow: auto;
 `;

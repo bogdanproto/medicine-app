@@ -1,16 +1,16 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router';
-import { AppContainer } from './SharedLayout.styled';
+import { SharedContainer } from './SharedLayout.styled';
 import { Header } from 'components/Header/Header';
 
 export const SharedLayout = () => {
   return (
-    <AppContainer>
+    <SharedContainer>
       <Header />
 
       <Suspense>
         <Outlet />
       </Suspense>
-    </AppContainer>
+    </SharedContainer>
   );
 };

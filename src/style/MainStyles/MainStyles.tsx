@@ -6,6 +6,7 @@ export const MainStyles = createGlobalStyle`
 
 html {
   margin: 0;
+   background-color: #f7f7f7;
  
 }
 
