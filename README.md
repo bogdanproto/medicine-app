@@ -19,7 +19,7 @@ FrontEnd Repo: https://github.com/bogdanproto/medicine-app
 
 BackEnd Repo: https://github.com/bogdanproto/medicine-backend
 
-**Important: The ENV files(FrontEnd, BackEnd) have been sent additionally to Telegram. Please ensure you have the .env files before starting the project locally. If you haven’t received them, you can contact me by telegram https://t.me/PROBOGDAN or email b.protasenko@gmail.com
+**Important: The ENV files(FrontEnd, BackEnd) have been sent additionally to Telegram. Please ensure you have the .env files before starting the project locally. If you haven’t received them, you can contact me by telegram https://t.me/PROBOGDAN or email b.protasenko@gmail.com**
 
 ### Installing
 
