@@ -27,18 +27,18 @@ BackEnd Repo: https://github.com/bogdanproto/medicine-backend
 - npm install
 - add .env
 
-### Executing program
+## Executing program
 
-# FrontEnd
+### FrontEnd
 
 - npm start: "react-scripts start",
 - npm build: "react-scripts build",
 
-# BackEnd
+### BackEnd
 
 - npm run start:dev
 
-### FrontEnd Built With
+## FrontEnd Built With
 
 - TypeScript
 - @reduxjs/toolkit: Redux Toolkit simplifies Redux development.
@@ -48,7 +48,7 @@ BackEnd Repo: https://github.com/bogdanproto/medicine-backend
 - react-router-dom: React Router is a routing library for React applications.
 - styled-components: Styled Components allows styling React components.
 
-### BackEnd Built With
+## BackEnd Built With
 
 - Express: Fast, minimalist web framework for Node.js.
 - Mongoose: MongoDB object modeling tool for Node.js.
