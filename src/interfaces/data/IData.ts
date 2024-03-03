@@ -40,6 +40,25 @@ export interface IOrderHistory extends IOrder {
   createdAt: string;
 }
 
+export interface ISortFavorite {
+  favorite: null | string;
+}
+
+export interface ISortPrice {
+  price: null | string;
+}
+export interface ISortCreatedAt {
+  createdAt: null | string;
+}
+
+export type ISortProp = ISortFavorite | ISortPrice | ISortCreatedAt;
+
+export interface ISortObj {
+  favorite: null | string;
+  price: null | string;
+  createdAt: null | string;
+}
+
 export interface ISliceData {
   stores: IStore[];
   activeStore: string | null;
@@ -47,6 +66,8 @@ export interface ISliceData {
   favoriteDrugs: string[];
   cart: ICartItem[];
   history: IOrder[];
+
+  sortProps: [ISortFavorite, ISortPrice, ISortCreatedAt];
 
   successMsg: string | null;
   errorData: string | null;

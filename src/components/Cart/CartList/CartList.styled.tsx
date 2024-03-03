@@ -4,6 +4,9 @@ export const CartListContainer = styled.div`
   width: 440px;
   height: 380px;
 
+  border: 1px solid ${({ theme }) => theme.colorSubText};
+  border-radius: 8px 0 0 8px;
+
   padding: 8px;
 
   ul {

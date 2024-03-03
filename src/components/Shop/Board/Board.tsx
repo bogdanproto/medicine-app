@@ -1,16 +1,21 @@
 import { useTypeSelector } from 'services/redux/customHook/typeHooks';
 import { CardList } from '../CardList/CardList';
-import { BoardContainer } from './Board.styled';
-import { selectActiveDrugs } from 'services/redux/dataSlice/selectors';
-import { Empty } from 'components/common';
+import { BoardContainer, BoardListContainer } from './Board.styled';
+import { selectSortedDrugs } from 'services/redux/dataSlice/selectors';
+import { Empty, SortBar } from 'components/common';
 
 export const Board = () => {
-  const drugs = useTypeSelector(selectActiveDrugs);
+  const sortedDrugs = useTypeSelector(selectSortedDrugs);
 
   return (
     <BoardContainer>
-      {drugs.length > 0 ? (
-        <CardList drugs={drugs} />
+      {sortedDrugs.length > 0 ? (
+        <>
+          <SortBar />
+          <BoardListContainer>
+            <CardList drugs={sortedDrugs} />
+          </BoardListContainer>
+        </>
       ) : (
         <Empty>
           <p>Please select a store </p>

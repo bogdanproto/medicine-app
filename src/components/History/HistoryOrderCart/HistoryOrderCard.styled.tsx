@@ -5,6 +5,7 @@ export const HistoryOrderCardContainer = styled.div`
 
   padding: 8px;
   border: 1px solid ${({ theme }) => theme.colorSubText};
+  border-radius: 8px;
 
   ul {
     display: flex;

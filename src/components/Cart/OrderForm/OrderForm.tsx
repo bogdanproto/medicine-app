@@ -41,32 +41,36 @@ export const OrderForm = () => {
   };
 
   return (
-    <OrderFormContainer onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <InputForm placeholder="Name" {...register('name')} />
-        <ErrorInputForm>{errors.name?.message}</ErrorInputForm>
-      </div>
+    <>
+      {cart.length > 0 && (
+        <OrderFormContainer onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <InputForm placeholder="Name" {...register('name')} />
+            <ErrorInputForm>{errors.name?.message}</ErrorInputForm>
+          </div>
 
-      <div>
-        <InputForm placeholder="Email" {...register('email')} />
-        <ErrorInputForm>{errors.email?.message}</ErrorInputForm>
-      </div>
+          <div>
+            <InputForm placeholder="Email" {...register('email')} />
+            <ErrorInputForm>{errors.email?.message}</ErrorInputForm>
+          </div>
 
-      <div>
-        <InputForm placeholder="Phone" {...register('phone')} />
-        <ErrorInputForm>{errors.phone?.message}</ErrorInputForm>
-      </div>
+          <div>
+            <InputForm placeholder="Phone" {...register('phone')} />
+            <ErrorInputForm>{errors.phone?.message}</ErrorInputForm>
+          </div>
 
-      <div>
-        <InputForm placeholder="Address" {...register('address')} />
-        <ErrorInputForm>{errors.address?.message}</ErrorInputForm>
-      </div>
-      <TotalBox>
-        <TotalText>{`Total price: ${totalPrice}$`}</TotalText>
-        <ButtonForm disabled={!totalPrice} type="submit">
-          Submit
-        </ButtonForm>
-      </TotalBox>
-    </OrderFormContainer>
+          <div>
+            <InputForm placeholder="Address" {...register('address')} />
+            <ErrorInputForm>{errors.address?.message}</ErrorInputForm>
+          </div>
+          <TotalBox>
+            <TotalText>{`Total price: ${totalPrice}$`}</TotalText>
+            <ButtonForm disabled={!totalPrice} type="submit">
+              Submit
+            </ButtonForm>
+          </TotalBox>
+        </OrderFormContainer>
+      )}
+    </>
   );
 };
