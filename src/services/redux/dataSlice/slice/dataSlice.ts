@@ -1,14 +1,36 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { ISliceData } from 'interfaces';
 
-import { toToggelFavorite } from '../reducers';
+import {
+  toAddToCart,
+  toChangeQntCart,
+  toDeleteFromCart,
+  toToggelFavorite,
+} from '../reducers';
+import {
+  createOrder,
+  getAllDrugByStore,
+  getAllOrder,
+  getAllStores,
+} from '../operations';
+import {
+  handleFulfilledCreateOrder,
+  handleFulfilledGetAllDrugs,
+  handleFulfilledGetAllOrder,
+  handleFulfilledGetAllStores,
+  handlePendingData,
+  handleRejectedData,
+} from '../handlesStatus';
 
 const initialState: ISliceData = {
   stores: [],
+  activeStore: null,
+
   favoriteDrugs: [],
   cart: [],
   history: [],
 
+  successMsg: null,
   errorData: null,
   isLoading: false,
 };
@@ -18,9 +40,37 @@ const dataSlice = createSlice({
   initialState,
   reducers: {
     toggelFavorite: toToggelFavorite,
+    addToCart: toAddToCart,
+    deleteFromCart: toDeleteFromCart,
+    changeQntCart: toChangeQntCart,
   },
-  extraReducers: builder => {},
+  extraReducers: builder => {
+    builder
+      .addCase(getAllStores.fulfilled, handleFulfilledGetAllStores)
+      .addCase(getAllDrugByStore.fulfilled, handleFulfilledGetAllDrugs)
+      .addCase(getAllOrder.fulfilled, handleFulfilledGetAllOrder)
+      .addCase(createOrder.fulfilled, handleFulfilledCreateOrder)
+      .addMatcher(
+        isAnyOf(
+          getAllStores.pending,
+          getAllDrugByStore.pending,
+          getAllOrder.pending,
+          createOrder.pending
+        ),
+        handlePendingData
+      )
+      .addMatcher(
+        isAnyOf(
+          getAllStores.rejected,
+          getAllDrugByStore.rejected,
+          getAllOrder.rejected,
+          createOrder.rejected
+        ),
+        handleRejectedData
+      );
+  },
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { toggelFavorite } = dataSlice.actions;
+export const { toggelFavorite, addToCart, deleteFromCart, changeQntCart } =
+  dataSlice.actions;

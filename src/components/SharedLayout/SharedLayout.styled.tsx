@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
-export const AppContainer = styled.div`
+export const AppContainer = styled.main`
   box-sizing: border-box;
-  position: relative;
-  padding: 16px;
-`;
+  max-width: 980px;
 
-export const PageContent = styled.main`
-  margin-top: 64px;
-  margin-bottom: 64px;
-  padding: 32px;
+  margin: 0 auto;
+  border-left: 1px solid ${({ theme }) => theme.colorSubText};
+  border-right: 1px solid ${({ theme }) => theme.colorSubText};
 `;

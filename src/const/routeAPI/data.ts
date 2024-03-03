@@ -1,11 +1,11 @@
 interface RoutesDataAPI {
   STORE: string;
-  DRAG: string;
+  DRAGBYSTORE: string;
   ORDER: string;
 }
 
 export const routeDataAPI: RoutesDataAPI = Object.freeze({
   STORE: '/api/store',
-  DRAG: '/api/drug',
+  DRAGBYSTORE: '/api/drug/store',
   ORDER: '/api/order',
 });

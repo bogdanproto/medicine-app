@@ -5,42 +5,50 @@ export interface IDrug {
   imgCloud: string;
 }
 
+export interface IDrugByStore {
+  drugs: IDrug[];
+  id: string;
+}
+
 export interface IStore {
   _id: string;
   title: string;
   address: string;
-  drugs: IDrug[];
+  drugs: IDrug[] | [];
 }
 
-export interface ICartItem {
-  item: IDrug;
+export interface ICartItem extends IDrug {
   quantity: number;
 }
 
-export interface IOrderItem {
+export interface ICartItemQnt {
   _id: string;
-  title: string;
-  priceItem: number;
   quantity: number;
 }
 
 export interface IOrder {
-  _id: string;
-  store: IStore;
   name: string;
   email: string;
   phone: string;
   address: string;
   totalPrice: number;
-  products: IOrderItem[];
+  products: ICartItem[];
+}
+
+export interface IOrderHistory extends IOrder {
+  _id: string;
+  createdAt: string;
 }
 
 export interface ISliceData {
   stores: IStore[];
+  activeStore: string | null;
+
   favoriteDrugs: string[];
   cart: ICartItem[];
   history: IOrder[];
 
+  successMsg: string | null;
   errorData: string | null;
   isLoading: boolean;
 }

@@ -6,8 +6,9 @@ export const LinkStyled = styled(NavLink)`
 
   padding: 8px 16px;
   font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
 
   color: ${({ theme }) => theme.colorInputText};
   transition: all ${({ theme }) => theme.cubicTransition};
@@ -15,5 +16,11 @@ export const LinkStyled = styled(NavLink)`
   &.active {
     color: ${({ theme }) => theme.colorButtonText};
     background-color: ${({ theme }) => theme.colorButton};
+  }
+
+  &:hover,
+  &:focus {
+    background-color: ${({ theme }) => theme.colorButton};
+    color: ${({ theme }) => theme.colorButtonText};
   }
 `;

@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 99;
-
   box-sizing: border-box;
 
   display: flex;
@@ -19,4 +14,14 @@ export const HeaderContainer = styled.header`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   background-color: white;
   border-bottom: solid 2px ${({ theme }) => theme.colorElement};
+
+  nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  button {
+    width: fit-content;
+    height: 32px;
+  }
 `;
