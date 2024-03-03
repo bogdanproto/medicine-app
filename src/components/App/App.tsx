@@ -1,4 +1,5 @@
 import { AuthPage } from 'components/Auth';
+import { Notification } from 'components/Notify/Notification/Notification';
 import { SharedLayout } from 'components/SharedLayout/SharedLayout';
 import { routePage } from 'const';
 import { NotFound, PrivateRoute, RestrictedRoute } from 'pages';
@@ -11,6 +12,7 @@ import {
   useTypeDispatch,
   useTypeSelector,
 } from 'services/redux/customHook/typeHooks';
+import { AppContainer } from './App.styled';
 
 const Shop = lazy(() => import('../../pages/Shop/Shop'));
 const Cart = lazy(() => import('../../pages/Cart/Cart'));
@@ -25,7 +27,8 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <AppContainer>
+      <Notification />
       {isAppLoaded && (
         <Routes>
           <Route
@@ -55,6 +58,6 @@ export const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       )}
-    </>
+    </AppContainer>
   );
 };

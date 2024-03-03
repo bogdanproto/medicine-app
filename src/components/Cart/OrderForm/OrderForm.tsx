@@ -36,6 +36,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { isSubmitSuccessful, errors },
   } = useForm({
     resolver: yupResolver(schemaOrderForm),
@@ -52,6 +53,12 @@ export const OrderForm: React.FC<OrderFormProps> = ({
     }
   }, [isSubmitSuccessful, reset]);
 
+  useEffect(() => {
+    if (mapAddress) {
+      setValue('address', mapAddress);
+    }
+  }, [mapAddress, setValue]);
+
   const onSubmit = (data: any) => {
     dispatch(createOrder({ ...data, products: cart, totalPrice }));
   };
@@ -59,7 +66,10 @@ export const OrderForm: React.FC<OrderFormProps> = ({
   return (
     <>
       {cart.length > 0 && (
-        <OrderFormContainer onSubmit={handleSubmit(onSubmit)}>
+        <OrderFormContainer
+          onSubmit={handleSubmit(onSubmit)}
+          autoComplete="off"
+        >
           <div>
             <InputForm placeholder="Name" {...register('name')} />
             <ErrorInputForm>{errors.name?.message}</ErrorInputForm>
