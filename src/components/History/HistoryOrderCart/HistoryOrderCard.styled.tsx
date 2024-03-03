@@ -35,7 +35,7 @@ export const MainInfo = styled.div`
   align-items: flex-start;
   gap: 8px;
 
-  padding: 8px;
+  padding: 8px 8px 8px 16px;
 
   font-size: 14px;
 `;
