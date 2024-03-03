@@ -9,3 +9,4 @@ export * from './IconBtn/IconBtn.styled';
 export * from './Form/Form.styled';
 export * from './Empty/Empty.styled';
 export * from './SortBar/SortBar';
+export * from './AddressInput/AddressInput';

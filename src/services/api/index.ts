@@ -4,3 +4,4 @@ export * from './auth/authAPI';
 export * from './data/getAllDrugByStoreAPI';
 export * from './data/getAllOrderAPI';
 export * from './data/createOrderAPI';
+export * from './map/getAddressByPinAPI';
