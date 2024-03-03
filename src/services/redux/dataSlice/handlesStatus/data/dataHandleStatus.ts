@@ -41,9 +41,9 @@ export const handleFulfilledGetAllOrder = (
 
 export const handleFulfilledCreateOrder = (
   state: ISliceData,
-  action: PayloadAction<IOrder>
+  action: PayloadAction<IOrder[]>
 ) => {
-  state.history = [...state.history, action.payload];
+  state.history = action.payload;
   state.cart = [];
 
   state.successMsg = successDataMsg.ORDER_CREATED;

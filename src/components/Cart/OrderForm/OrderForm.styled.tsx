@@ -8,6 +8,8 @@ export const OrderFormContainer = styled(FormContainer)`
   align-items: flex-end;
 
   padding: 8px;
+  border: 1px solid ${({ theme }) => theme.colorSubText};
+  border-radius: 0 8px 8px 0;
 
   button {
     width: 140px;
@@ -19,5 +21,5 @@ export const TotalBox = styled.div`
   justify-content: flex-end;
   gap: 14px;
 
-  margin-top: 112px;
+  margin-top: 102px;
 `;

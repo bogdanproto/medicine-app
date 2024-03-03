@@ -4,6 +4,7 @@ import { routePage } from 'const';
 import { NotFound, PrivateRoute, RestrictedRoute } from 'pages';
 import { lazy, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
+
 import { refreshUser } from 'services/redux/authSlice/operations';
 import { selectIsAppLoaded } from 'services/redux/authSlice/selectors';
 import {

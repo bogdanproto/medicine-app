@@ -33,7 +33,7 @@ export const HistoryOrderCard: React.FC<HistoryOrderCartProps> = ({
         <p>{`Email: ${email}`}</p>
         <p>{`Phone: ${phone}`}</p>
         <p>{`Address: ${address}`}</p>
-        <Title>{`TotalPrice: ${totalPrice}`}</Title>
+        <Title>{`TotalPrice: ${totalPrice}$`}</Title>
       </MainInfo>
     </HistoryOrderCardContainer>
   );

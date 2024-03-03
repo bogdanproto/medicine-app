@@ -5,6 +5,7 @@ import {
   toAddToCart,
   toChangeQntCart,
   toDeleteFromCart,
+  toSetSortProps,
   toToggelFavorite,
 } from '../reducers';
 import {
@@ -30,6 +31,8 @@ const initialState: ISliceData = {
   cart: [],
   history: [],
 
+  sortProps: [{ favorite: 'ascending' }, { price: '' }, { createdAt: '' }],
+
   successMsg: null,
   errorData: null,
   isLoading: false,
@@ -43,6 +46,7 @@ const dataSlice = createSlice({
     addToCart: toAddToCart,
     deleteFromCart: toDeleteFromCart,
     changeQntCart: toChangeQntCart,
+    setSortProps: toSetSortProps,
   },
   extraReducers: builder => {
     builder
@@ -72,5 +76,10 @@ const dataSlice = createSlice({
 });
 
 export const dataSliceReducer = dataSlice.reducer;
-export const { toggelFavorite, addToCart, deleteFromCart, changeQntCart } =
-  dataSlice.actions;
+export const {
+  toggelFavorite,
+  addToCart,
+  deleteFromCart,
+  changeQntCart,
+  setSortProps,
+} = dataSlice.actions;

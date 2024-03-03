@@ -1,7 +1,10 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { IStore } from 'interfaces/data/IData';
+import { IDrug, IStore } from 'interfaces/data/IData';
 import { selectActiveStore, selectStores } from './selectStores';
 import { RootState } from 'services/redux/store';
+
+export const selectFavoriteDrug = (state: RootState) =>
+  state.data.favoriteDrugs;
 
 export const selectActiveDrugs = createSelector(
   [selectStores, selectActiveStore],
@@ -12,5 +15,12 @@ export const selectActiveDrugs = createSelector(
   }
 );
 
-export const selectFavoriteDrug = (state: RootState) =>
-  state.data.favoriteDrugs;
+export const selectActiveDrugsFav = createSelector(
+  [selectActiveDrugs, selectFavoriteDrug],
+  (drugs, favDrugs) =>
+    drugs.map((drug: IDrug) =>
+      favDrugs.includes(drug._id)
+        ? { ...drug, favorite: 0 }
+        : { ...drug, favorite: 1 }
+    )
+);

@@ -7,6 +7,8 @@ export const Empty = styled.div`
   align-items: center;
   height: 100%;
 
+  padding-top: 64px;
+
   p {
     font-size: 36px;
     color: ${({ theme }) => theme.colorSubText};

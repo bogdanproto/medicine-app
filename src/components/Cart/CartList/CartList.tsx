@@ -1,16 +1,15 @@
 import { ICartItem } from 'interfaces/data/IData';
 import { CartListBox, CartListContainer } from './CartList.styled';
 import { CartItem } from '../CartItem/CartItem';
-import { useTypeSelector } from 'services/redux/customHook/typeHooks';
-import { selectCart } from 'services/redux/dataSlice/selectors';
-import { Empty } from 'components/common';
 
-export const CartList = () => {
-  const cart = useTypeSelector(selectCart);
+interface CartListProps {
+  cart: ICartItem[];
+}
 
+export const CartList: React.FC<CartListProps> = ({ cart }) => {
   return (
     <CartListContainer>
-      {cart.length > 0 ? (
+      {cart.length > 0 && (
         <CartListBox>
           <ul>
             {cart.map((item: ICartItem) => (
@@ -18,10 +17,6 @@ export const CartList = () => {
             ))}
           </ul>
         </CartListBox>
-      ) : (
-        <Empty>
-          <p>Shopping cart is empty</p>
-        </Empty>
       )}
     </CartListContainer>
   );
