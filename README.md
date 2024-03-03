@@ -13,6 +13,8 @@ selection. Additionally, a history page enables easy access to past orders.
 
 **Important: The ENV files(FrontEnd, BackEnd) have been sent additionally to Telegram. Please ensure you have the .env files before starting the project locally. If you haven’t received them, you can contact me by telegram https://t.me/PROBOGDAN or email b.protasenko@gmail.com**
 
+### Links
+
 Live link FrontEnd: https://polite-macaron-9d0c9e.netlify.app
 
 Live Server BackEnd: https://medicine-backend.onrender.com
@@ -20,6 +22,11 @@ Live Server BackEnd: https://medicine-backend.onrender.com
 FrontEnd Repo: https://github.com/bogdanproto/medicine-app
 
 BackEnd Repo: https://github.com/bogdanproto/medicine-backend
+
+### Auth and test data
+
+User for testing: test@gmail.com, password: 12345678. 
+You can register a new account for testing. 
 
 ### Installing
 
