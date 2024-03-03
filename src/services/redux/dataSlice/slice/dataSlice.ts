@@ -6,6 +6,7 @@ import {
   toChangeQntCart,
   toDeleteFromCart,
   toSetSortProps,
+  toSetSuccesMsgDefault,
   toToggelFavorite,
 } from '../reducers';
 import {
@@ -47,6 +48,7 @@ const dataSlice = createSlice({
     deleteFromCart: toDeleteFromCart,
     changeQntCart: toChangeQntCart,
     setSortProps: toSetSortProps,
+    setSuccesMsgDefault: toSetSuccesMsgDefault,
   },
   extraReducers: builder => {
     builder
@@ -82,4 +84,5 @@ export const {
   deleteFromCart,
   changeQntCart,
   setSortProps,
+  setSuccesMsgDefault,
 } = dataSlice.actions;
